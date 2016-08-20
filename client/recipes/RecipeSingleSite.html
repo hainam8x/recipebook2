@@ -17,6 +17,8 @@
 		{{else}}
 			<button class="btn-primary toggle-menu">Add to Menu</button>
 		{{/if}}
+		{{> quickForm collection="Recipes" id=updateRecipeId Type="update"
+		doc=this}}
 
 	</article>
 	
