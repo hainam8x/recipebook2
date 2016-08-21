@@ -11,13 +11,17 @@
 			{{/each}}
 		</p>
 		<a href="/recipe/{{_id}}">View Details</a>
-		
+		<i class="fa fa-pencil"></i>
+		<i class="fa fa-trash"></i>
 		{{#if inMenu}}
 			<button class="btn-deny toggle-menu">remove from Menu</button> 
 		{{else}}
 			<button class="btn-primary toggle-menu">Add to Menu</button>
 		{{/if}}
-		{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
+		
+			{{#if $.Session.get 'editMode'}}
+			{{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
+		{{/if}}
 
 	</article>
 	
